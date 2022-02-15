@@ -24,11 +24,21 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'})
 })
 
+app.get('/api', (req, res) => {
+  const result = new Date()
+  res.json({
+    unix: result.getTime(),
+    utc: result.toUTCString()
+  })
+})
+
 app.get('/api/:date', (req, res) => {
   const input = req.params.date
 
+  console.log(input)
+
   let result = ''
-  if (input === '') result = new Date()
+  if (!input) result = new Date()
   else if (input.includes('-')) result = new Date(input)
   else result = new Date(Number(input))
   
