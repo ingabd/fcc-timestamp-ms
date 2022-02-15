@@ -26,10 +26,11 @@ app.get("/api/hello", function (req, res) {
 
 app.get('/api/:date', (req, res) => {
   const input = +req.params.date
-  
+
   let result = ''
   if (input === '') result = new Date()
-  else result = new Date(input)
+  else if (input.includes('-')) result = new Date(input)
+  else result = new Date(Number(input))
   
   if (result.toString() === 'Invalid Date') res.json({ error: 'Invalid Date' })
   else { 
