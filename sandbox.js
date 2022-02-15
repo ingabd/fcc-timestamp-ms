@@ -1,4 +1,9 @@
-const input = Number('1451001600000')
+//'2015-12-25' 
+//'1451001600000'
+
+const input = '1451001600000'
+const string = input.includes('-')
+console.log(string)
 const options = {
   weekday: 'short',
   year: 'numeric',
@@ -10,4 +15,5 @@ const result = {
   unix: input,
   utc: date
 }
-console.log(result)
+if (date === 'Invalid Date') console.log(date)
+else console.log(result)
