@@ -1,4 +1,4 @@
-const input = Number('1451001600000')
+const input = Number('asdf') //'1451001600000'
 const options = {
   weekday: 'short',
   year: 'numeric',
@@ -10,4 +10,5 @@ const result = {
   unix: input,
   utc: date
 }
-console.log(result)
+if (date === 'Invalid Date') console.log(date)
+else console.log(result)
