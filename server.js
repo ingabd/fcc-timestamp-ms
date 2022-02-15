@@ -25,7 +25,7 @@ app.get("/api/hello", function (req, res) {
 })
 
 app.get('/api/:date', (req, res) => {
-  const input = +req.params.date
+  const input = req.params.date
 
   let result = ''
   if (input === '') result = new Date()
@@ -35,7 +35,7 @@ app.get('/api/:date', (req, res) => {
   if (result.toString() === 'Invalid Date') res.json({ error: 'Invalid Date' })
   else { 
     res.json({
-      unix: input,
+      unix: result.getTime(),
       utc: result.toUTCString()
     })
    }

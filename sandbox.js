@@ -1,9 +1,9 @@
 //'2015-12-25' 
 //'1451001600000'
 
-const input = '1451001600000'
-const string = input.includes('-')
-console.log(string)
+const input = '2015-12-25'
+// const string = input.includes('-')
+console.log(input.includes('-'))
 const options = {
   weekday: 'short',
   year: 'numeric',
